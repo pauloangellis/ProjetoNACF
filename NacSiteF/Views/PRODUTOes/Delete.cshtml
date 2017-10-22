@@ -1,0 +1,72 @@
+﻿@model NacSiteF.Models.PRODUTO
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>PRODUTO</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MARCA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MARCA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MODELO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MODELO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ANO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ANO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.QUANTIDADE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.QUANTIDADE)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PRECO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PRECO)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

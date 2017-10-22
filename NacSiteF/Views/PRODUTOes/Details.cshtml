@@ -1,0 +1,66 @@
+﻿@model NacSiteF.Models.PRODUTO
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>PRODUTO</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.MARCA)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MARCA)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.MODELO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.MODELO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ANO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ANO)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.QUANTIDADE)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.QUANTIDADE)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.PRECO)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.PRECO)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID_PRODUTO }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

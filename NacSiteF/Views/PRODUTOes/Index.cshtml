@@ -1,0 +1,65 @@
+﻿@model IEnumerable<NacSiteF.Models.PRODUTO>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MARCA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MODELO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ANO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QUANTIDADE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PRECO)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MARCA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MODELO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ANO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QUANTIDADE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PRECO)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID_PRODUTO }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID_PRODUTO }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID_PRODUTO })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
