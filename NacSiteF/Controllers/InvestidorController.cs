@@ -13,13 +13,13 @@ namespace NacSiteF.Controllers
     public class InvestidorController : Controller
     {
         private NacSiteEntities db = new NacSiteEntities();
-
+        [Authorize(Roles = "Administrador")]
         // GET: Investidor
         public ActionResult Index()
         {
             return View(db.INVESTIDOR.ToList());
         }
-
+        [Authorize(Roles = "Administrador")]
         // GET: Investidor/Details/5
         public ActionResult Details(int? id)
         {
@@ -57,7 +57,29 @@ namespace NacSiteF.Controllers
 
             return View(iNVESTIDOR);
         }
+        //Create No Login
+        public ActionResult CreateNoLogin()
+        {
+            return View();
+        }
 
+        // POST: Investidor/Create
+        // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
+        // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateNoLogin([Bind(Include = "ID_INVESTIDOR,NOME,EMAIL,TELEFONE,ENDERECO,CIDADE,ESTADO")] INVESTIDOR iNVESTIDOR)
+        {
+            if (ModelState.IsValid)
+            {
+                db.INVESTIDOR.Add(iNVESTIDOR);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(iNVESTIDOR);
+        }
+        [Authorize(Roles = "Administrador")]
         // GET: Investidor/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -72,7 +94,7 @@ namespace NacSiteF.Controllers
             }
             return View(iNVESTIDOR);
         }
-
+        [Authorize(Roles = "Administrador")]
         // POST: Investidor/Edit/5
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -88,7 +110,7 @@ namespace NacSiteF.Controllers
             }
             return View(iNVESTIDOR);
         }
-
+        [Authorize(Roles = "Administrador")]
         // GET: Investidor/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -103,7 +125,7 @@ namespace NacSiteF.Controllers
             }
             return View(iNVESTIDOR);
         }
-
+        [Authorize(Roles = "Administrador")]
         // POST: Investidor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

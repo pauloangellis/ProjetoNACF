@@ -1,9 +1,5 @@
 ﻿@model NacSiteF.Models.ACESSO
 
-@{
-    Layout = null;
-}
-
 <!DOCTYPE html>
 
 <html>
@@ -41,7 +37,22 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.ATIVO, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.ATIVO, new { htmlAttributes = new { @class = "form-control" } })
+                    @{
+                        List<SelectListItem> listItems = new List<SelectListItem>();
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "N",
+                            Value = "N"
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "S",
+                            Value = "S",
+                            Selected = true
+                        });
+                    }
+
+                    @Html.DropDownListFor(model => model.ATIVO, listItems, "Selecione")
                     @Html.ValidationMessageFor(model => model.ATIVO, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -49,7 +60,21 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.PERFIL, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.PERFIL, new { htmlAttributes = new { @class = "form-control" } })
+                    @{
+                        List<SelectListItem> listItems2 = new List<SelectListItem>();
+                        listItems2.Add(new SelectListItem
+                        {
+                            Text = "Administrador",
+                            Value = "Administrador"
+                        });
+                        listItems2.Add(new SelectListItem
+                        {
+                            Text = "Usuario",
+                            Value = "Usuario",
+                        });
+                    }
+
+                    @Html.DropDownListFor(model => model.PERFIL, listItems2, "Selecione")
                     @Html.ValidationMessageFor(model => model.PERFIL, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -71,7 +96,7 @@
     }
     
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Voltar", "Index")
     </div>
 </body>
 </html>

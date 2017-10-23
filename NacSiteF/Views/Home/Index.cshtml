@@ -1,7 +1,4 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Bootstrap Example</title>
@@ -14,7 +11,6 @@
 <body>
 
     <div class="container">
-        <h2>@ViewBag.Title</h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -27,10 +23,10 @@
             <div class="carousel-inner">
 
                 <div class="item active">
-                    <img src="~/Image/carro.jpg" alt="Carro" style="width:100%;" />
+                    <img src="~/Image/carro3.jpg" alt="Carro" style="width:100%;" />
                     <div class="carousel-caption">
                         <h3>Los Angeles</h3>
-                        <p>@Html.ActionLink("Investir", "Create", "Investidor")</p>
+                        <p>@Html.ActionLink("Investir", "CreateNoLogin", "Investidor")</p>
                     </div>
                 </div>
 
@@ -38,15 +34,15 @@
                     <img src="~/Image/carro2.jpg" alt="Carro" style="width:100%;" />
                     <div class="carousel-caption">
                         <h3>Chicago</h3>
-                        <p>@Html.ActionLink("Investir", "Create", "Investidor")</p>
+                        <p>@Html.ActionLink("Investir", "CreateNoLogin", "Investidor")</p>
                     </div>
                 </div>
 
                 <div class="item">
-                    <img src="~/Image/carro3.jpg" alt="Carro" style="width:100%;" />
+                    <img src="~/Image/carro.jpg" alt="Carro" style="width:100%;" />
                     <div class="carousel-caption">
                         <h3>New York</h3>
-                        <p>@Html.ActionLink("Investir", "Create", "Investidor")</p>
+                        <p>@Html.ActionLink("Investir", "CreateNoLogin", "Investidor")</p>
                     </div>
                 </div>
 

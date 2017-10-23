@@ -260,6 +260,7 @@
     <Content Include="Views\Investidor\Details.cshtml" />
     <Content Include="Views\Investidor\Edit.cshtml" />
     <Content Include="Views\Investidor\Index.cshtml" />
+    <Content Include="Views\Investidor\CreateNoLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

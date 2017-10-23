@@ -9,7 +9,7 @@
 </head>
 <body>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Novo", "Create")
     </p>
     <table class="table">
         <tr>
@@ -49,12 +49,13 @@
                 @Html.DisplayFor(modelItem => item.NOME)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID_LOGIN }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID_LOGIN }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID_LOGIN })
+                @Html.ActionLink("Editar", "Edit", new { id=item.ID_LOGIN }) |
+                @Html.ActionLink("Detalhes", "Details", new { id=item.ID_LOGIN }) |
+                @Html.ActionLink("Deletar", "Delete", new { id=item.ID_LOGIN })
             </td>
         </tr>
     }
     </table>
+    @Html.ActionLink("Painel Admin", "Index", "Manager")
 </body>
 </html>

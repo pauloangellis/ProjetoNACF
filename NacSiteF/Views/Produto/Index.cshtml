@@ -13,7 +13,7 @@
 
     </p>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        @Html.ActionLink("Novo", "Create")
     </p>
     <table class="table">
         <tr>
@@ -53,13 +53,14 @@
                 @Html.DisplayFor(modelItem => item.PRECO)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.ID_PRODUTO }) |
-                @Html.ActionLink("Details", "Details", new { id=item.ID_PRODUTO }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.ID_PRODUTO })
+                @Html.ActionLink("Editar", "Edit", new { id=item.ID_PRODUTO }) |
+                @Html.ActionLink("Detalhes", "Details", new { id=item.ID_PRODUTO }) |
+                @Html.ActionLink("Deletar", "Delete", new { id=item.ID_PRODUTO })
             </td>
         </tr>
     }
     
     </table>
+    @Html.ActionLink("Painel Admin", "Index", "Manager")
 </body>
 </html>
