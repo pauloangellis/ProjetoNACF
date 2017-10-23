@@ -153,11 +153,16 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AcessoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PRODUTOesController.cs" />
+    <Compile Include="Controllers\InvestidorController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
+    <Compile Include="Controllers\ProdutoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ACESSO.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INVESTIDOR.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -188,6 +193,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Image\carro.jpg" />
+    <Content Include="Image\carro2.jpg" />
+    <Content Include="Image\carro3.jpg" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -241,11 +249,17 @@
     <Content Include="Views\Acesso\Details.cshtml" />
     <Content Include="Views\Acesso\Edit.cshtml" />
     <Content Include="Views\Acesso\Index.cshtml" />
-    <Content Include="Views\PRODUTOes\Create.cshtml" />
-    <Content Include="Views\PRODUTOes\Delete.cshtml" />
-    <Content Include="Views\PRODUTOes\Details.cshtml" />
-    <Content Include="Views\PRODUTOes\Edit.cshtml" />
-    <Content Include="Views\PRODUTOes\Index.cshtml" />
+    <Content Include="Views\Produto\Create.cshtml" />
+    <Content Include="Views\Produto\Delete.cshtml" />
+    <Content Include="Views\Produto\Details.cshtml" />
+    <Content Include="Views\Produto\Edit.cshtml" />
+    <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Manager\Index.cshtml" />
+    <Content Include="Views\Investidor\Create.cshtml" />
+    <Content Include="Views\Investidor\Delete.cshtml" />
+    <Content Include="Views\Investidor\Details.cshtml" />
+    <Content Include="Views\Investidor\Edit.cshtml" />
+    <Content Include="Views\Investidor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

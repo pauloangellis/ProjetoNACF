@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container" style="text-align:center">
+    <div class="row" style="margin-top:10px">
+        <h2>Carro News</h2>
+        @if (Session["Nome"] != null)
+        {
+            <p><h3>Bem vindo ao sistema</h3> <h1>@Session["Nome"].ToString()</h1></p>
+            <p>@Html.ActionLink("Cadastro de Acesso", "Index", "Acesso")</p>
+            <p>@Html.ActionLink("Cadastro de Produto", "Index", "Produto")</p>
+        }
+    </div>
+</div>

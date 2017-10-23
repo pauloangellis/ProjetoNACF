@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="NacSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="NacSiteModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ACESSO">
           <Key>
             <PropertyRef Name="ID_LOGIN" />
@@ -15,6 +15,18 @@
           <Property Name="ATIVO" Type="char" MaxLength="1" />
           <Property Name="PERFIL" Type="varchar" MaxLength="15" />
           <Property Name="NOME" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="INVESTIDOR">
+          <Key>
+            <PropertyRef Name="ID_INVESTIDOR" />
+          </Key>
+          <Property Name="ID_INVESTIDOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="100" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="100" />
+          <Property Name="TELEFONE" Type="varchar" MaxLength="100" />
+          <Property Name="ENDERECO" Type="varchar" MaxLength="100" />
+          <Property Name="CIDADE" Type="varchar" MaxLength="100" />
+          <Property Name="ESTADO" Type="varchar" MaxLength="2" />
         </EntityType>
         <EntityType Name="PRODUTO">
           <Key>
@@ -29,10 +41,10 @@
         </EntityType>
         <EntityContainer Name="NacSiteModelStoreContainer">
           <EntitySet Name="ACESSO" EntityType="Self.ACESSO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INVESTIDOR" EntityType="Self.INVESTIDOR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PRODUTO" EntityType="Self.PRODUTO" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="NacSiteModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -61,7 +73,20 @@
         <EntityContainer Name="NacSiteEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ACESSO" EntityType="Self.ACESSO" />
           <EntitySet Name="PRODUTO" EntityType="Self.PRODUTO" />
+          <EntitySet Name="INVESTIDOR" EntityType="NacSiteModel.INVESTIDOR" />
         </EntityContainer>
+        <EntityType Name="INVESTIDOR">
+          <Key>
+            <PropertyRef Name="ID_INVESTIDOR" />
+          </Key>
+          <Property Name="ID_INVESTIDOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ENDERECO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CIDADE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -89,6 +114,19 @@
                 <ScalarProperty Name="ANO" ColumnName="ANO" />
                 <ScalarProperty Name="QUANTIDADE" ColumnName="QUANTIDADE" />
                 <ScalarProperty Name="PRECO" ColumnName="PRECO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INVESTIDOR">
+            <EntityTypeMapping TypeName="NacSiteModel.INVESTIDOR">
+              <MappingFragment StoreEntitySet="INVESTIDOR">
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="CIDADE" ColumnName="CIDADE" />
+                <ScalarProperty Name="ENDERECO" ColumnName="ENDERECO" />
+                <ScalarProperty Name="TELEFONE" ColumnName="TELEFONE" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="ID_INVESTIDOR" ColumnName="ID_INVESTIDOR" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

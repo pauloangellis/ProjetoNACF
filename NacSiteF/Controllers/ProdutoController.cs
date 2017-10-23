@@ -10,7 +10,7 @@ using NacSiteF.Models;
 
 namespace NacSiteF.Controllers
 {
-    public class PRODUTOesController : Controller
+    public class ProdutoController : Controller
     {
         private NacSiteEntities db = new NacSiteEntities();
 

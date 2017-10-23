@@ -7,6 +7,7 @@
       <Diagram DiagramId="931159aedd2e41659185bbd5911e203a" Name="Diagram1">
         <EntityTypeShape EntityType="NacSiteModel.ACESSO" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NacSiteModel.PRODUTO" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NacSiteModel.INVESTIDOR" Width="1.5" PointX="5" PointY="0.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -27,5 +27,6 @@ namespace NacSiteF.Models
     
         public virtual DbSet<ACESSO> ACESSO { get; set; }
         public virtual DbSet<PRODUTO> PRODUTO { get; set; }
+        public virtual DbSet<INVESTIDOR> INVESTIDOR { get; set; }
     }
 }

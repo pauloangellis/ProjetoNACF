@@ -1,0 +1,67 @@
+﻿@model IEnumerable<NacSiteF.Models.INVESTIDOR>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NOME)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EMAIL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TELEFONE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ENDERECO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CIDADE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ESTADO)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NOME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TELEFONE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ENDERECO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CIDADE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ESTADO)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID_INVESTIDOR }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID_INVESTIDOR }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID_INVESTIDOR })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

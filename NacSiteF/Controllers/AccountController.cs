@@ -54,7 +54,7 @@ namespace NacSiteF.Controllers
                                 /*código abaixo cria uma session para armazenar o nome do usuário*/
                                 Session["Nome"] = vLogin.NOME;
                                 /*retorna para a tela inicial do Home*/
-                                return RedirectToAction("Index", "Home");
+                                return RedirectToAction("Index", "Manager");
                             }
                             /*Else responsável da validação da senha*/
                             else
